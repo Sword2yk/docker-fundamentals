@@ -1,6 +1,6 @@
-#Create and run 3 Nginx containers with different content using volumes. 
-#Each container should serve its own custom HTML page. 
-#Each container should be accessible on the localhost with it’s own unique port
+# Create and run 3 Nginx containers with different content using volumes. 
+# Each container should serve its own custom HTML page. 
+# Each container should be accessible on the localhost with it’s own unique port
 
 ## Get the file path for index.html in the container
 ```docker exec -it CONTAINER ID```
