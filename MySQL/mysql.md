@@ -94,3 +94,4 @@ is used to open an interactive shell session (Bash) inside a running Docker cont
 - mysql: show tables;
 - mysql: describe user;
 - mysql: select host, User from user;
+- Create database
