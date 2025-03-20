@@ -1,4 +1,4 @@
-# MYSQL
+# MYSQL DOCKER CONTAINER
 
 ## HUB DOCKER
 
@@ -32,7 +32,7 @@ Create a folder for sql data ```sql-date```
 ```
 ### **Docker command breakdown step by step**
 
-## **Breakdown:**
+### **Breakdown:**
 
 | **Option** | **Explanation** |
 |------------|---------------|
@@ -50,19 +50,47 @@ Create a folder for sql data ```sql-date```
 3. Persists data in ./MySQL/sql-data to prevent loss when the container stops.
 4. Sets the root password for MySQL authentication.
 
+## List all the containers [running, stopped, and exited containers]
 ```docker ps -a```
 
-d --> detach
-p --> port forward
-v --> vol
+```bash
+CONTAINER ID   IMAGE        COMMAND                  CREATED        STATUS                     PORTS                     NAMES
+a1b2c3d4e5f6   mysql:8      "docker-entrypoint.s…"   3 hours ago   Exited (0) 1 hour ago     3306/tcp, 33060/tcp       sword2yk-sql-container
+b2c3d4e5f6g7   nginx        "nginx -g 'daemon of…"   5 hours ago   Up 2 hours                0.0.0.0:8080->80/tcp      my-nginx
+```
 
-## To interect with the container
+
+| **Column**      | **Description** |
+| ------------------------------- | --------------------------------------------- |
+|  CONTAINER ID | Unique identifier for the container.  |
+|  IMAGE |  The Docker image used to create the container.   |
+| COMMAND  | The command that was executed when the container started.  |
+|  CREATED | Time since the container was created.  |
+| STATUS  | Current status (e.g., Up, Exited, Paused).  |
+| PORTS  | Port mappings between the container and the host.  |
+|  NAMES | Custom or automatically assigned container name.  |
+
+
+## To interact with the container
+
+```bash
 docker exec -it sword2yk-sql-container bash
+```
 
-## mySQL
-mysql: mysql -u root -p
-mysql: show databases;
-mysql: use mysql
-mysql: show tables;
-mysql: describe user;
-mysql: select host, User from user;
+is used to open an interactive shell session (Bash) inside a running Docker container named ```sword2yk-sql-container```.
+
+
+| **Option**      | **Explanation** |
+| ------------------------------- | --------------------------------------------- |
+| `docker exec`  | Executes a command inside a running container.  |
+| `-it`  | Enables interactive mode (-i keeps input open, -t allocates a pseudo-TTY for an interactive shell).  |
+|  `sword2yk-sql-container` | Specifies the container name where the command will be executed.  |
+| `bash`  |  Opens a Bash shell inside the container. |
+
+## MYSQL COMMANDS
+- mysql: mysql -u root -p
+- mysql: show databases;
+- mysql: use mysql
+- mysql: show tables;
+- mysql: describe user;
+- mysql: select host, User from user;
