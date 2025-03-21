@@ -112,21 +112,11 @@ is used to open an interactive shell session (Bash) inside a running Docker cont
 ### create table;
 
 ```sql
-CREATE TABLE client (
-    CLIENT_ID int NOT NULL,
-    CLIENT_Name varchar(255),
-    PRIMARY KEY (CLIENT_ID)
-);
-CREATE TABLE address (
-    ADDRESS_ID int NOT NULL,
-    STREET_Name varchar(255),
-    ADDRESS_Number int,
-    CITY varchar(255),
-    STATE varchar(255),
-    COUNTRY varchar(255),
-    CLIENT_FK int, -- Optional: Add NOT NULL if needed
-    PRIMARY KEY (ADDRESS_ID),
-    FOREIGN KEY (CLIENT_FK) REFERENCES client(CLIENT_ID)
+CREATE TABLE table_name (
+    column1 datatype constraints,
+    column2 datatype constraints,
+    column3 datatype constraints,
+    ...
 );
 ```
 
@@ -136,3 +126,30 @@ CREATE TABLE address (
 <br>
 
 ![Describe](mysql_doc_content/mysql_describe.jpg)
+
+### Insert values into the tables
+
+```sql
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+```
+
+### To view table records
+
+```sql
+SELECT * FROM table_name;
+```
+![Table Records](mysql_doc_content/mysql_table_client_address.jpg)
+
+### Join client and address tables
+
+![JOINT TABLES](mysql_doc_content/mysql_join_tables.jpg)
+
+### Updated Table Records
+
+```sql
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+```
+![UPDATE TABLE](mysql_doc_content/mysql_update_table.jpg)
