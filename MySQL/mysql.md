@@ -98,11 +98,15 @@ is used to open an interactive shell session (Bash) inside a running Docker cont
 ## Create Databases
 - create database sword2yk_db;
     `create database sword2yk_db;`
+
+[sword2yk_db](https://hub.docker.com)
+
 - show databases;
 - use sword2yk_db;
 - show tables;
 - create table
-```bash
+
+```sql
 CREATE TABLE client (
     CLIENT_ID int NOT NULL,
     CLIENT_Name varchar(255),
