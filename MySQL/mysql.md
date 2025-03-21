@@ -28,7 +28,7 @@ Create a folder for sql data ```sql-date```
 ## Create a MySQL server in a container 
 
 ```bash
-    docker run --name sword2yk-sql-container -d -p 3306:3306 -p 33060:33060 -v ./MySQL/sql-data:/var/lib/mysql -e   MYSQL_ROOT_PASSWORD=root mysql:8
+    docker run --name sword2yk-sql-container -d -p 3306:3306 -p 33060:33060 -v ./sql-data:/var/lib/mysql -e   MYSQL_ROOT_PASSWORD=root mysql:8
 ```
 ### **Docker command breakdown step by step**
 
@@ -96,9 +96,9 @@ is used to open an interactive shell session (Bash) inside a running Docker cont
 - mysql: select host, User from user;
 
 ## Create Databases
-- create database sword2yk_db;<br>
+- create database sword2yk_db;
 
-    `create database sword2yk_db;`
+`create database sword2yk_db;`
 
 ### New database (sword2yk_db)
 
@@ -108,7 +108,8 @@ is used to open an interactive shell session (Bash) inside a running Docker cont
 ![sword2yk_db](mysql_doc_content/mysql_1.jpg)
 
 - show tables;
-- create table;
+
+### create table;
 
 ```sql
 CREATE TABLE client (

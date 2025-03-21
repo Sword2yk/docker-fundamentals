@@ -72,5 +72,4 @@ target
 hs_err_pid*
 
 # sql-data
-./sql-data/*
-!.gitignore
+MySQL/sql-data/
