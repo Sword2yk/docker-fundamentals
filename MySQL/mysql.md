@@ -96,15 +96,19 @@ is used to open an interactive shell session (Bash) inside a running Docker cont
 - mysql: select host, User from user;
 
 ## Create Databases
-- create database sword2yk_db;
+- create database sword2yk_db;<br>
+
     `create database sword2yk_db;`
 
-[sword2yk_db](https://hub.docker.com)
+### New database (sword2yk_db)
 
 - show databases;
 - use sword2yk_db;
+
+![sword2yk_db](mysql_doc_content/mysql_1.jpg)
+
 - show tables;
-- create table
+- create table;
 
 ```sql
 CREATE TABLE client (
@@ -128,3 +132,6 @@ CREATE TABLE address (
 - show tables;
 - describe client;
 - describe address;
+<br>
+
+![Describe](mysql_doc_content/mysql_describe.jpg)
