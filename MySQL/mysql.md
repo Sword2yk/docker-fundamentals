@@ -28,7 +28,7 @@ Create a folder for sql data ```sql-date```
 ## Create a MySQL server in a container 
 
 ```bash
-    docker run --name sword2yk-sql-container -d -p 3306:3306 -p 33060:33060 -v ./sql-data:/var/lib/mysql -e   MYSQL_ROOT_PASSWORD=root mysql:8
+docker run --name sword2yk-sql-container -d -p 3306:3306 -p 33060:33060 -v ./sql-data:/var/lib/mysql -e   MYSQL_ROOT_PASSWORD=root mysql:8
 ```
 ### **Docker command breakdown step by step**
 
@@ -77,7 +77,7 @@ b2c3d4e5f6g7   nginx        "nginx -g 'daemon of…"   5 hours ago   Up 2 hours 
 docker exec -it sword2yk-sql-container bash
 ```
 
-is used to open an interactive shell session (Bash) inside a running Docker container named ```sword2yk-sql-container```.
+- `-it` is used to open an interactive shell session (Bash) inside a running Docker container named ```sword2yk-sql-container```.
 
 
 | **Option**      | **Explanation** |
