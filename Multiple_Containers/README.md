@@ -108,5 +108,6 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON meeting_app_db.* TO 'sword2yk_user'@'%';
 - mysql -u sword2yk_user -padmin1234 meeting_app_db
 - show databases;
 
+# Clone
 
 git clone -b mysql-db https://github.com/danielpm1982/springboot2-meeting-mng.git
