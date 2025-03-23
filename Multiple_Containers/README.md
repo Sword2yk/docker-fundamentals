@@ -108,6 +108,49 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON meeting_app_db.* TO 'sword2yk_user'@'%';
 - mysql -u sword2yk_user -padmin1234 meeting_app_db
 - show databases;
 
-# Clone
+## Clone
 
 git clone -b mysql-db https://github.com/danielpm1982/springboot2-meeting-mng.git
+
+### src/resoures/application.properties
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://${MYSQL_PORT_3306_TCP_ADDR:localhost}:${MYSQL_PORT_3306_TCP_PORT:3306}/${MYSQL_ENV_MYSQL_DATABASE:meeting_app_db}
+spring.datasource.username=${MYSQL_ENV_MYSQL_USER:sword2yk_user}
+spring.datasource.password=${MYSQL_ENV_MYSQL_PASSWORD:admin1234}
+spring.datasource.driver-class-name =com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+
+### Run the app Springboot2MeetingmngApplication 
+`/springboot2meetingmng/Springboot2MeetingmngApplication.java`
+![MeetingmngApplication](multiple_container_data_doc/springboot2meetingmg.jpg)
+
+**Data seeded into the databases mysql `meeting_app_db`**
+![db_seed_data](multiple_container_data_doc/seed_db.jpg)
+
+- Change the `spring.jpa.hibernate.ddl-auto=update` to `spring.jpa.hibernate.ddl-auto=validate` on the application properties after seeding the data first time.
+<br>
+- `validate` ensures schema consistency without automatic updates, making it ideal for production scenarios where strict control over database changes is necessary.
+
+## Complie the latest `springboot2meetingmg`
+AI to support
+
+## Create the application Docker file
+
+- `FROM openjdk:latest`: This line uses the latest version of the OpenJDK image as the base. While using "latest" is convenient, it's often better to specify a specific version for stability, especially in production environments.
+
+- `WORKDIR /`: This sets the working directory in the container to the root directory. It's more common to set it to something like "/app" to keep application files organized.
+
+- `EXPOSE 8080`: This indicates that the application listens on port 8080. However, to make the port accessible outside the container, you need to use the "-p" flag when running the container.
+
+- `COPY ./springboot2-meetingmng-0.0.1-SNAPSHOT.jar /meeting-app.jar`: This copies the specified JAR file from the build context into the container's root directory. Consider copying it to a more specific directory like "/app/".
+
+- `CMD ["jave","-jar","meeting-app.jar"]`: This sets the default command to run the JAR file. There's a typo here—"jave" should be "java". Also, it's good practice to include error handling or logging in the command.
+
+## Build the Docker image file for the app
+- Docker build syntax
+
+`docker build -t my-java-app .`
+- app image build
+
+`docker build -t meeting-app:v.2.0.0 .`
+1:02:26
