@@ -128,7 +128,7 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
 ![db_seed_data](multiple_container_data_doc/seed_db.jpg)
 
 - Change the `spring.jpa.hibernate.ddl-auto=update` to `spring.jpa.hibernate.ddl-auto=validate` on the application properties after seeding the data first time.
-<br>
+
 - `validate` ensures schema consistency without automatic updates, making it ideal for production scenarios where strict control over database changes is necessary.
 
 ## Complie the latest `springboot2meetingmg`
@@ -152,5 +152,5 @@ AI to support
 `docker build -t my-java-app .`
 - app image build
 
-`docker build -t meeting-app:v.2.0.0 .`
+`docker build -t meeting-app:v.2.0.0 .` <br>
 1:02:26
