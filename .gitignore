@@ -74,3 +74,5 @@ hs_err_pid*
 # sql-data, mysql-data
 MySQL/sql-data/
 Multiple_Containers/mysql-data/
+
+settings.json
